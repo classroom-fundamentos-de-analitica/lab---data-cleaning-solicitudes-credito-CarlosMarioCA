@@ -37,15 +37,16 @@ def clean_data():
     #df['monto_del_credito'] = [int(x.strip("$").replace(',', '').replace(".0","").replace(".00","")) for x in df['monto_del_credito']]
     df['monto_del_credito'] = df['monto_del_credito'].str.strip('$')
     df['monto_del_credito'] = df['monto_del_credito'].str.replace(',', '')
+
     df['monto_del_credito'] = df['monto_del_credito'].astype('float64')
 
     ind=df.columns.values.tolist()
     ind.remove('Unnamed: 0')
     df.drop_duplicates(subset=ind, inplace=True)
 
-    return df.value_counts()
+    return df
     
-print(clean_data())
+#print(clean_data())
 
 """
 Limpieza de datos usando Pandas
