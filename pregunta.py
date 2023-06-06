@@ -24,7 +24,7 @@ def clean_data():
         df[i] = df[i].str.replace('-', ' ')
         df[i] = df[i].str.replace('_', ' ')
 
-    df["barrio"] = [i.replace(". ",".") for i in df["barrio"]]
+    #df["barrio"] = [i.replace(". ",".") for i in df["barrio"]]
 
     df["línea_credito"] = [i.replace(". ",".") for i in df["línea_credito"]]
 
